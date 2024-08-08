@@ -4,9 +4,7 @@ WORKDIR /app
 
 COPY requirements.txt /app/
 
-FROM python:3.9-slim
-
-# Install pip and other dependencies
+#Install pip and other dependencies
 RUN pip install --upgrade pip
 
 RUN pip install -r /app/requirements.txt
