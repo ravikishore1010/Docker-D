@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    image: ashrk:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:RaVv%51996@db-instance-rk.cfoogwy0q7ui.ap-south-1.rds.amazonaws.com:5432/mydb
+    working_dir: /app
+  db:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=RaVv%51996
+      - POSTGRES_DB=mydb
